@@ -1,3 +1,56 @@
+function my_spaceship(course) {
+    //console.log(course);
+    directions = course.split(""); //separates the Input String into individual array characters
+    //console.log(directions);
+
+    //starting point for ship
+    var hor = 0;
+    var ver = 0;
+    var facing = 'up'; 
+    //console.log(ship);
+
+    i = 0;
+
+    while (i < directions.length) {
+        //console.log(directions[i]);
+        if (directions[i] === "R") {
+            if (facing === 'up') ((facing) = 'right');
+            else if (facing === 'right') ((facing) = 'down');
+            else if (facing === 'down') ((facing) = 'left');
+            else if (facing === 'left') ((facing) = 'up');
+        };
+        if (directions[i] === "L") {
+            if (facing === 'up') ((facing) = 'left');
+            else if (facing === 'left') ((facing) = 'down');
+            else if (facing === 'down') ((facing) = 'right');
+            else if (facing === 'right') ((facing) = 'up');
+        };
+        if (directions[i] === "A") {
+            if (facing === 'up') (ver--);
+            else if (facing === 'right') (hor++);
+            else if (facing === 'down') (ver++);
+            else if (facing === 'left') (hor--);
+        };
+        //console.log(ship);
+        i++;
+    };
+    //console.log(ship);
+    //console.log(direction);
+    let position = "{x: " + hor + ", y: " + ver + ", direction: '" + facing +"'}";
+    //console.log(position);
+    return position;
+
+}
+
+my_spaceship("");
+
+
+/*
+
+//THIS IS ANOTHER WAY TO SET UP A SPACESHIP
+//THIS METHOD CREATES AN OBJECT THAT TRACKS THE SHIP'S POSITION AS AN OBJECT
+//THE FUNCTION ITSELF ACCESSES AND MODIFIES THE OBJECT ACCORDING TO THE INPUT
+
 function my_spaceship(course){
     //console.log(course);
     directions = course.split(""); //separates the Input String into individual array characters
@@ -31,12 +84,11 @@ function my_spaceship(course){
         //console.log(ship);
         i++;
     };
-    var ship1 = JSON.parse({ship});
-    console.log(ship1);
-    //return JSON.parse(ship);
+    console.log(ship);
+    return ship;
 
 }
 
-my_spaceship("RAALALL");
-//my_spaceship("AAAA");
-//my_spaceship('');
+my_spaceship('');
+
+*/
